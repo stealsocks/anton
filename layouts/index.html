@@ -51,8 +51,8 @@
                     {{ .Content | markdownify }}
                 {{ end }}
             </div>
-            <div id=chroma class=tab-content>
-                {{ with .GetPage "/chroma.md" }}
+            <div id=projects class=tab-content>
+                {{ with .GetPage "/projects.md" }}
                     {{ .Content | markdownify }}
                 {{ end }}
             </div>
@@ -66,7 +66,7 @@
 
       <div class=tabs> 
         <button class=tab onclick="tabTo('personal')"> Personal </button>
-        <button class=tab onclick="tabTo('chroma')"> Chroma </button>
+        <button class=tab onclick="tabTo('projects')"> Projects </button>
         <button class=tab onclick="tabTo('website')"> Website </button>
       </div>
 
@@ -187,7 +187,7 @@
 
 
 
-  <div class="manifesto">
+  <!-- <div class="manifesto">
     <h2> Manifesto </h2>
 
     <div class=three-col>
@@ -197,7 +197,7 @@
         {{ end }}
 
     </div>
-  </div>
+  </div> -->
 
 </div>
 
