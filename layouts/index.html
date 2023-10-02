@@ -46,12 +46,12 @@
 
       <div class=text-holder>
         <div class=text>
-            <div id=website class=tab-content>
+            <div id=website class=tab-content style="display: none;">
                 {{ with .GetPage "/website.md" }}
                     {{ .Content | markdownify }}
                 {{ end }}
             </div>
-            <div id=projects class=tab-content>
+            <div id=projects class=tab-content style="display: none;">
                 {{ with .GetPage "/projects.md" }}
                     {{ .Content | markdownify }}
                 {{ end }}
@@ -148,12 +148,12 @@
         {{ end }}
     </div>
 
-    <div class=shelf>
+    <!-- <div class=shelf>
       <div class=shelf-title> papers </div>
         {{ range $.Site.Data.papers.entries }}
             <a target="_blank" href="{{ .link }}"> {{ .title }} </a>
         {{ end }}
-    </div>
+    </div> -->
 
     <div class=shelf>
       <div class=shelf-title> blogroll </div>
@@ -162,12 +162,12 @@
         {{ end }}
     </div>
 
-    <div class=shelf>
+    <!-- <div class=shelf>
       <div class=shelf-title> twitter </div>
        {{ range $.Site.Data.twitter.entries }}
             <a target="_blank" href="{{ .link }}"> {{ .title }} </a>
         {{ end }}
-    </div>
+    </div> -->
 
   </div>
 
