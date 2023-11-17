@@ -1,7 +1,7 @@
     .note-scroll{
       height: 5rem;
       width: calc(100% - 21.2rem);
-      overflow: scroll;
+      overflow: auto;
       padding: 4px 2px 0px 2px;
       white-space: nowrap;
       position: fixed;
@@ -16,24 +16,27 @@
     }
 
     .note-scroll-inner{
-      min-width: 1000px;
+      min-width: 100%;
+      display: flex;
       width: fit-content;
+      height: 100%;
     }
 
     .note-entry{
-      width: 8rem;
+      width: 100%;
+      min-width: 10rem;
       display: inline-block;
       border: solid 5px var(--text);
       margin: 0px 2px;
-      height: 3rem;
+      height: 5em;
       padding: 0.6rem;
       font-size: 15px;
       vertical-align: top;
       font-family: IBM;
       line-height: 1.2em;
       font-weight: 200;
-      word-break: break-all;
       white-space: normal;
+      overflow: auto;
       background: var(--background);
     }
 
@@ -110,6 +113,11 @@
                 article{
                   max-width: 100%;
                   padding: 4rem 5%;
+                  font-size: 16px;
+                }
+
+                h1{
+                  font-size: 2.4rem;
                 }
 
                 .status{

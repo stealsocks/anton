@@ -1,0 +1,38 @@
+.title-bar{
+    padding-left: 0%;
+  }
+
+.title-bar h1{
+    text-align: center;
+}
+
+@media screen and (max-width: 1100px) {
+
+    article{
+      max-width: 100%;
+      padding: 2rem 8rem;
+    }
+
+    .title-bar{
+      padding-left: 5%;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+
+    article{
+      max-width: 100%;
+      padding: 2rem 5%;
+    }
+
+    .title-bar{
+      padding-left: 5%;
+    }
+
+    .title-bar h1{
+      text-align: left;
+    }
+
+}
+

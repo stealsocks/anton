@@ -38,6 +38,10 @@
           font-weight: 400;  
         }
 
+    *{
+      box-sizing: border-box;
+    }
+
     :root{
       --background: #000;
       --text: #F59E02;
@@ -59,15 +63,16 @@
       border-bottom: solid 1px var(--text);
       left: 0;
       top: 0;
-      width: 100%;
+      width: calc(100% - 21rem);
       box-sizing: border-box;
       text-align: left;
-      padding: 0rem 4rem;
       position: sticky;
       background: var(--background);
       opacity: 0.9;
       z-index: 2;
+      padding-left: 4rem;
     }
+
 
     .title-bar h1{
       line-height: 5rem;
@@ -77,16 +82,8 @@
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
+      text-align: left;
     }
-
-   /* main{
-      width: calc(100% - 21rem);
-      position: relative;
-      color: var(--text);
-      font-family: IBM;
-      -webkit-font-smoothing: antialiased;
-      padding: 3rem;
-    }*/
 
     main{
         color: var(--text);
@@ -98,7 +95,6 @@
       padding: 2rem 10rem;
       display: block;
       box-sizing: border-box;
-      text-align: left;
       max-width: calc(100% - 21rem);
       font-size: 18px;
       line-height: 1.5em;
@@ -255,7 +251,16 @@
       border: solid 1px var(--background);
     }
 
+
     @media screen and (max-width: 1100px) {
+
+        .sidebar{
+            display: none;
+        }
+
+        main{
+            width: 100%;
+        }
 
         .mobile-menu{
           display: block;
@@ -264,8 +269,34 @@
         }
 
         .title-bar{
-          opacity: 1; 
+          width: 100%;
+          padding: 0px 5%;
         }
+
+        .title-bar h1{
+          overflow: auto;
+          text-overflow: unset;
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;
+        }
+
     }
 
+    @media screen and (max-width: 800px) {
 
+            .title-bar h1{
+              padding-left: 0%;
+              text-align: left;
+            }
+
+            article{
+              max-width: 100%;
+              padding: 2rem 5%;
+              font-size: 16px;
+            }
+
+            .progress{
+              display: none;
+            }
+            
+        }

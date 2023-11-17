@@ -54,14 +54,17 @@
         background: var(--text);
       }
 
+    * {
+        box-sizing: border-box;
+    }
+
     body {
-/*      cursor: url('/media/small-crosshair.svg') 2 2, pointer;*/
       margin: 0px;
       background: var(--background);
       font-family: IBM;
       color: var(--text);
-      border-top: solid 1px var(--text);
-      border-left: solid 1px var(--text);
+      /*border-top: solid 1px var(--text);
+      border-left: solid 1px var(--text);*/
     }   
 
     .sidebar{
@@ -327,7 +330,7 @@
     }
 
     #profile-img{
-      width: calc(100% - 10px);
+      width: 100%;
       height: 100%;
       filter: sepia(60%) saturate(150%) brightness(100%);
       border: solid 5px var(--text);
@@ -336,6 +339,7 @@
     .note-list{
         display: inline-block;
         width: calc(69%);
+        overflow: auto;
     }
 
     .holder td a{
@@ -589,12 +593,14 @@
         }
 
         .holder{
-          padding: 4rem;
-          width: calc(100% - 29rem);
+          padding: 3rem;
+          width: calc(100% - 21rem);
         }
 
         .graph{
           height: fit-content;
+          max-height: 15rem;
+          overflow: hidden;
           border: solid 1px var(--text);
           background: rgba(245, 158, 0, 0.4);
           background-image:
@@ -615,7 +621,7 @@
         }
 
         footer{
-            width: calc(100% - 25rem);
+            width: calc(100% - 21rem);
             padding: 1rem 2rem;
             background: rgba(245, 158, 0, 0.5);
             margin-top: 1rem;
@@ -674,7 +680,7 @@
             }
 
             .holder{
-                width: 90%;
+                width: 100%;
                 padding: 5%;
             }
 
@@ -693,7 +699,9 @@
             }
 
             footer{
-                width: calc(100% - 4rem);
+                width: calc(100%);
+                font-size: 14px;
+                padding: 1rem 1rem;
             }
         }
 

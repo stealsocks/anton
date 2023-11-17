@@ -3,9 +3,9 @@
     <div class="title"> <a href="/"> anton troynikov </a> </div>
 
     
-    <a href="{{ .Site.Params.subscriptionLink}}">
-        <div class=subscribe style="background: var(--text); width: calc(100%); text-align: center; padding: 1rem 0rem; font-size: 1.4rem; font-family: IBM; opacity: 1; font-weight: 200; color: var(--background); margin-bottom: 0.1rem"> SUBSCRIBE </div>
-    </a>
+    <!-- <a href="{{ .Site.Params.subscriptionLink}}"> -->
+        <div class=subscribe style="background: var(--text); width: calc(100%); text-align: center; padding: 1rem 0rem; font-size: 1.4rem; font-family: IBM; opacity: 1; font-weight: 200; color: var(--background); margin-bottom: 0.1rem"> ONLY FORWARD >>> </div>
+    <!-- </a> -->
 
     <div class=scrollable>
 
@@ -24,27 +24,51 @@
         </div>
 
         <div class=notes>
-            <div class=graph> 
+            <div class="graph"> 
                 <h3><a href="/notes"> NOTES </a></h3>
+                <div class="inside-graph">
+                    {{ $maxWordCount := 0 }}
+                    {{ $wordCount := 0 }}
+                    {{ range where .Site.RegularPages "Section" "notes" }}
+                        {{ $wordCount = .WordCount }}
+                        {{ if gt $wordCount $maxWordCount }}
+                            {{ $maxWordCount = $wordCount }}
+                        {{ end }}
+                    {{ end }}
+
+                    {{ range where .Site.RegularPages "Section" "notes" }}
+                        <a href="{{ .Permalink }}">
+                            <span class="bar" style="height:{{ math.Div (math.Mul .WordCount 160) $maxWordCount }}px;">
+                                <span class="tooltip">{{ .Title }}</span>
+                            </span>
+                        </a> 
+                    {{ end }}
+                </div>
+            </div>
+
+            <!-- <div class=graph> 
+                <h3><a href="/notes"> NOTES </a></h3>
+                <div class=inside-graph>
                 {{ range where .Site.RegularPages "Section" "notes"}}
                     <a href="{{ .Permalink }}">
-                        <span class=bar style="width: 10px; height:{{ div (int .WordCount) 5 }}px; display: inline-block; background: var(--text); margin: 1.5rem 0px -2px 0px; ">
+                        <span class=bar style="height:{{ div (int .WordCount) 5 }}px;">
                             <span class=tooltip> {{ .Title }} </span>
                         </span>
                     </a> 
                 {{ end }}
-            </div>
+                </div>
+            </div> -->
             <div class=subtitle> Shorter, and oft-incomplete writing. Explorations of a theme, not comprehensive material.
             </div>
         </div> 
     </div>
 
     <div class=bottom>
-        <div class=coords>
+        <div class=coords style="display: flex;">
           <table style="width: 70%; font-weight: 200; display: inline-table; table-layout: fixed" class=smaller-table> 
-            <tr> <td width="50%"> x </td> <td id=x> 0 </td> </tr>
+            <tr> <td width="65%"> x </td> <td id=x> 0 </td> </tr>
             <tr> <td> y </td> <td id=y> 0 </td> </tr>
-            <tr> <td style=" font-size: 0.9em; background: var(--text); color: var(--background);" id=clock> 0000000000 </td> <td id=time> 12:00 </td> </tr>
+            <tr> <td style="font-size: 0.9em; background: var(--text); color: var(--background);" id=clock> 0000000000 </td> <td id=time> 12:00 </td> </tr>
           </table>
           <div class=velocity-holder> 
             <div id=velocity>1.02</div> px/ms 
@@ -101,7 +125,7 @@
       let d = new Date()
       let h = d.getHours(), m = d.getMinutes(), s = d.getSeconds()
       $("clock").innerHTML = d.getTime() 
-      $("time").innerHTML = + h + ":" + m 
+      $("time").innerHTML = + h + ":" + m
     }, 200)
 
     setInterval( () => {

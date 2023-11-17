@@ -4,7 +4,6 @@
       position: fixed;
       right: 0;
       top: 0;
-      box-sizing: border-box;
       z-index: 2;
       background: var(--background);
       border: solid 1px var(--text);
@@ -27,7 +26,7 @@
       border: var(--border); 
       text-align: center; 
       display: inline-block; 
-      width: calc(29.5%); 
+      width: calc(30%); 
       vertical-align: top; 
       color: var(--background); 
       background: var(--text); 
@@ -104,7 +103,7 @@
 
         #posts-display{
           margin: 1rem 0px 6px 0rem;
-          height: 5em;
+          height: 80px;
           background: rgba(245, 158, 0, 0.4);
           color: var(--text);
           padding: 1.2em;
@@ -209,6 +208,10 @@
 
         .bar{
             position: relative;
+            display: inline-block; 
+            background: var(--text); 
+            width: 15px;
+            bottom: 0px;
         }
 
         .bar:hover .tooltip{
@@ -251,13 +254,8 @@
           margin-top: 0.5rem;
         }
 
-        .holder{
-          padding: 4rem;
-          width: calc(100% - 29rem);
-        }
-
         .graph{
-          height: fit-content;
+          height: 200px;
           border: solid 1px var(--text);
           background: rgba(245, 158, 0, 0.4);
           background-image:
@@ -265,10 +263,22 @@
                 repeating-linear-gradient(90deg, rgba(245, 158, 0, 0.4) 0 1px, transparent 1px 100%);
           background-size: 21px 21px;
           padding: 0rem 0.3rem;
+          position: relative;
+        }
+
+        .inside-graph{
+          height: 100%;
+          overflow-x: auto;
+          overflow-y: hidden;
+          white-space: nowrap;
+          padding-top: 40px;
         }
 
         .graph h3{
             text-align: right;
+            position: absolute;
+            top: 0rem;
+            right: 0rem;
             padding: 0.5rem 1rem 0rem 1rem;
             margin: 0px;
         }

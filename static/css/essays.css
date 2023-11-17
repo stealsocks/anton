@@ -1,3 +1,4 @@
+
     .essay-preview-holder{
       width: 47%;
       margin: 0px 0px 6% 0px;
@@ -62,34 +63,31 @@
 
     @media screen and (max-width: 1100px) {
 
-                .sidebar{
-                    display: none;
-                }
+        article{
+          max-width: 100%;
+          padding: 3rem 5%;
+        }
 
-                main{
-                    width: 100%;
-                }
-
-                article{
-                  max-width: 100%;
-                  padding: 3rem 5%;
-                }
-            }
+        .title-bar h1{
+          padding-left: 0%;
+          text-align: left;
+        }
+    }
 
     @media screen and (max-width: 700px) {
 
-                article{
-                  max-width: 100%;
-                  padding: 4rem 10%;
-                }
+        article{
+          max-width: 100%;
+          padding: 4rem 5%;
+        }
 
-                .essay-preview-holder{
-                  width: 100%;
-                  margin: 0px 0px 4rem 0px;
-                }
+        .essay-preview-holder{
+          width: 100%;
+          margin: 0px 0px 3rem 0px;
+        }
 
-                article{
-                  display: inline-block;
-                }
-            }
+        article{
+          display: inline-block;
+        }
+    }
 

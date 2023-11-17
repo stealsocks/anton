@@ -1,6 +1,7 @@
 ---
 title: In Defense of Simple Architectures
 thumbnail: "fonts.jpg"
+featured: true
 ---
 
 Wave is a $1.7B company with 70 engineers whose product is a CRUD app that adds and subtracts numbers. In keeping with this, our architecture is a standard CRUD app architecture, a Python monolith on top of Postgres.  [Starting with a simple architecture and solving problems in simple ways](https://twitter.com/danluu/status/1462607028585525249)  where possible has allowed us to scale to this size while engineers mostly focus on work that delivers value to users.
