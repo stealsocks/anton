@@ -1,6 +1,5 @@
 ---
 title: Rewilding the Web
-featured: true
 thumbnail: "download.jpg"
 ---
 
