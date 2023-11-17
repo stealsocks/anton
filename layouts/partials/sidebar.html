@@ -121,12 +121,19 @@
           lastmousey = mousey;
     })
 
-    setInterval( () => {
-      let d = new Date()
-      let h = d.getHours(), m = d.getMinutes(), s = d.getSeconds()
-      $("clock").innerHTML = d.getTime() 
-      $("time").innerHTML = + h + ":" + m
-    }, 200)
+    setInterval(() => {
+        let d = new Date();
+        let h = formatTimeUnit(d.getHours());
+        let m = formatTimeUnit(d.getMinutes());
+        let s = formatTimeUnit(d.getSeconds());
+
+        $("clock").innerHTML = d.getTime();
+        $("time").innerHTML = h + ":" + m;
+    }, 200);
+
+    function formatTimeUnit(unit) {
+        return unit < 10 ? "0" + unit : unit;
+    }
 
     setInterval( () => {
       $("velocity").innerHTML = mousetravel / 50
